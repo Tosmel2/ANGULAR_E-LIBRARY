@@ -5,15 +5,27 @@
 <!--&lt;!&ndash;  <p>navbar works!</p>&ndash;&gt;-->
 <!--</header>-->
 
-<header class="p-4 py-10 bg-blue-300 shadow-md">
-  <div class="container md:w-[90%] w-[95%] flex justify-between h-full py- mx-auto">
+<header class="p-4 py-10 bg-[#4291B0] shadow">
+  <div class="container md:w-[90%] w-[95%] flex items-center justify-between h-full mx-auto">
     <a rel="noopener noreferrer" routerLink="/" aria-label="Back to homepage" class="flex items-center p-2">
       <img src="./src/assets/logo.svg" class="hidden md:block" alt="" />
       <img src="/LogoDesign.svg" class="md:hidden block" alt="" />
     </a>
 
+<!--    search input on mobile-->
+    <div class="relative flex md:hidden items-center">
+				<span class="absolute inset-y-0 left-0 flex items-center pl-2">
+					<button type="submit" title="Search" class="p-1 focus:outline-none focus:ring">
+						<svg fill="currentColor" viewBox="0 0 512 512" class="w-4 h-4 text-[#4291B0]">
+							<path d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"></path>
+						</svg>
+					</button>
+				</span>
+      <input type="search" name="Search" placeholder="Search..." class="w-32 p-2 pl-10 text-sm rounded-md text-gray-800 sm:w-auto focus:outline-[#4291B0] bg-gray-300" />
+    </div>
+
     <!-- Hamburger icon -->
-    <button class="p-4 lg:hidden" (click)="toggleMenu()">
+    <button class="lg:hidden" (click)="toggleMenu()">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
            class="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -21,50 +33,59 @@
     </button>
 
     <!-- Responsive menu -->
-    <div *ngIf="menuOpen" class="lg:hidden absolute top-16 leading-10 pb-5 left-0 right-0 bg-blue-300 z-10">
-      <ul class="flex flex-col items-center space-y-2">
+    <div *ngIf="menuOpen" class="lg:hidden absolute top-16 leading-10 pb-5 left-0 right-0 bg-[#4291B0] z-10">
+      <ul class="flex flex-col items-center space-y-2" (click)="closeMenu()">
         <li>
-          <a routerLink="/" class="p-4 font-medium hover:border-b-2" (click)="closeMenu()">Home</a>
+          <a routerLink="/" class="p-4 font-medium hover:border-b-2">Home</a>
         </li>
         <li>
-          <a routerLink="/about" class="p-4 font-medium hover:border-b-2" (click)="closeMenu()">About Us</a>
+          <a routerLink="/about" class="p-4 font-medium hover:border-b-2">About Us</a>
         </li>
         <li>
-          <a routerLink="/blog" class="p-4 font-medium hover:border-b-2" (click)="closeMenu()">Blog</a>
+          <a routerLink="/blog" class="p-4 font-medium hover:border-b-2">Blog</a>
         </li>
         <li>
-          <a routerLink="/team" class="p-4 font-medium hover:border-b-2" (click)="closeMenu()">Team</a>
+          <a routerLink="/team" class="p-4 font-medium hover:border-b-2">Team</a>
         </li>
         <li>
-          <a routerLink="/contact" class="p-4 font-medium hover:border-b-2" (click)="closeMenu()">Contact Us</a>
+          <a routerLink="/contact" class="p-4 font-medium hover:border-b-2">Contact Us</a>
         </li>
       </ul>
     </div>
 
     <!-- Desktop menu -->
-    <ul class="items-stretch hidden space-x-3 lg:flex">
+    <ul class="items-center hidden space-x-3 lg:flex">
       <li class="flex">
-        <a routerLink="/" class="flex items-center px-4 font-medium hover:border-b-2">Home</a>
+        <a routerLink="/" class="flex items-center px-4 font-medium hover:border-b-4">Home</a>
       </li>
       <li class="flex">
-        <a routerLink="/about" class="flex items-center px-4 font-medium hover:border-b-2">About Us</a>
+        <a routerLink="/about" class="flex items-center px-4 font-medium hover:border-b-4">About</a>
       </li>
       <li class="flex">
-        <a routerLink="/blog" class="flex items-center px-4 font-medium hover:border-b-2">Blog</a>
+        <a routerLink="/blog" class="flex items-center px-4 font-medium hover:border-b-4">Blog</a>
       </li>
       <li class="flex">
-        <a routerLink="/team" class="flex items-center px-4 font-medium hover:border-b-2">Team</a>
-      </li>
-      <li class="flex">
-        <a routerLink="/contact" class="flex items-center px-4 font-medium hover:border-b-2">Contact Us</a>
+        <a routerLink="/pricing" class="flex items-center px-4 font-medium hover:border-b-4">Pricing</a>
       </li>
     </ul>
 
+<!--    search input field-->
+    <div class="relative md:flex hidden items-center">
+				<span class="absolute inset-y-0 left-0 flex items-center pl-2">
+					<button type="submit" title="Search" class="p-1 focus:outline-none focus:ring">
+						<svg fill="currentColor" viewBox="0 0 512 512" class="w-4 h-4 text-[#4291B0]">
+							<path d="M479.6,399.716l-81.084-81.084-62.368-25.767A175.014,175.014,0,0,0,368,192c0-97.047-78.953-176-176-176S16,94.953,16,192,94.953,368,192,368a175.034,175.034,0,0,0,101.619-32.377l25.7,62.2L400.4,478.911a56,56,0,1,0,79.2-79.195ZM48,192c0-79.4,64.6-144,144-144s144,64.6,144,144S271.4,336,192,336,48,271.4,48,192ZM456.971,456.284a24.028,24.028,0,0,1-33.942,0l-76.572-76.572-23.894-57.835L380.4,345.771l76.573,76.572A24.028,24.028,0,0,1,456.971,456.284Z"></path>
+						</svg>
+					</button>
+				</span>
+      <input type="search" name="Search" placeholder="Search..." class="w-32 p-2 pl-10 text-gray-800 text-sm rounded-md sm:w-auto focus:outline-[#4291B0] bg-gray-300" />
+    </div>
+
     <!-- Desktop buttons -->
     <div class="items-center flex-shrink-0 hidden lg:flex">
-      <button class="self-center px-8 py-3 font-semibold rounded" (click)="navigate('/login')">Login</button>
-      <button class="self-center px-8 py-3 font-semibold rounded bg-blue-500 text-white"
-              (click)="navigate('/signup')">Sign up</button>
+      <button class="self-center px-8 py-2 font-semibold rounded" (click)="navigate('/login')">Login</button>
+      <button class="px-10 py-2 font-semibold rounded-full flex items-center bg-[#C3EBF5] text-[#4291B0]"
+              (click)="navigate('/register')">Sign up</button>
     </div>
   </div>
 </header>
