@@ -1,20 +1,16 @@
-import {Component} from '@angular/core';
-import {NgForOf, NgOptimizedImage} from "@angular/common";
-import { BookSectionComponent } from "../book-section/book-section.component";
-
+import { Component } from '@angular/core';
+import {BookDetailsComponent} from "../components/book-details/book-details.component";
 
 @Component({
-  selector: 'app-book-collections',
+  selector: 'app-best-selling-books',
   standalone: true,
-  imports: [
-    NgOptimizedImage,
-    NgForOf,
-    BookSectionComponent,
-  ],
-  templateUrl: './book-collections.component.html',
-  styleUrl: './book-collections.component.css',
+    imports: [
+        BookDetailsComponent
+    ],
+  templateUrl: './best-selling-books.component.html',
+  styleUrl: './best-selling-books.component.css'
 })
-export class BookCollectionsComponent {
+export class BestSellingBooksComponent {
   bestSellingBooks = [
     { title: 'Single with a Difference', author: 'Faith Oyedepo', rating: 5, image: './assets/singleDiff.jpg', height: 285, width: 177, background: '#D9D9D9' },
     { title: 'Single Ready and waiting', author: 'Tanika Chambers', rating: 5, image: './assets/sr.jpg', height: 285, width: 177, background: '#FFF6D7' },

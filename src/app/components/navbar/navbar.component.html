@@ -8,8 +8,9 @@
 <header class="p-4 py-10 bg-[#4291B0] shadow">
   <div class="container md:w-[90%] w-[95%] flex items-center justify-between h-full mx-auto">
     <a rel="noopener noreferrer" routerLink="/" aria-label="Back to homepage" class="flex items-center p-2">
-      <img src="./src/assets/logo.svg" class="hidden md:block" alt="" />
-      <img src="/LogoDesign.svg" class="md:hidden block" alt="" />
+      E-LIBRARY
+<!--      <img ngSrc="./assets/logo-lib.svg" class="hidden md:block" alt="fff" height="30" width="40"/>-->
+<!--      <img ngSrc="./assets/logo-lib.svg" class="md:hidden block" alt="fff" height="30" width="40"/>-->
     </a>
 
 <!--    search input on mobile-->
@@ -21,19 +22,19 @@
 						</svg>
 					</button>
 				</span>
-      <input type="search" name="Search" placeholder="Search..." class="w-32 p-2 pl-10 text-sm rounded-md text-gray-800 sm:w-auto focus:outline-[#4291B0] bg-gray-300" />
+      <input type="search" name="Search" placeholder="Search..." class="w-32 p-2 pl-10 text-sm rounded-md text-gray-800 sm:w-auto focus:outline-[#4291B0] bg-[#EFFAFC]" />
     </div>
 
     <!-- Hamburger icon -->
     <button class="lg:hidden" (click)="toggleMenu()">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-           class="w-6 h-6">
+           class="w-8 h-8">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </button>
 
     <!-- Responsive menu -->
-    <div *ngIf="menuOpen" class="lg:hidden absolute top-16 leading-10 pb-5 left-0 right-0 bg-[#4291B0] z-10">
+    <div *ngIf="menuOpen" class="lg:hidden absolute top-16 leading-10 py-8 left-0 right-0 bg-[#4291B0] z-10">
       <ul class="flex flex-col items-center space-y-2" (click)="closeMenu()">
         <li>
           <a routerLink="/" class="p-4 font-medium hover:border-b-2">Home</a>
@@ -78,13 +79,13 @@
 						</svg>
 					</button>
 				</span>
-      <input type="search" name="Search" placeholder="Search..." class="w-32 p-2 pl-10 text-gray-800 text-sm rounded-md sm:w-auto focus:outline-[#4291B0] bg-gray-300" />
+      <input type="search" name="Search" placeholder="Search..." class="w-32 p-2 pl-10 text-gray-800 text-sm rounded-md sm:w-auto focus:outline-[#4291B0] bg-[#EFFAFC]" />
     </div>
 
     <!-- Desktop buttons -->
     <div class="items-center flex-shrink-0 hidden lg:flex">
-      <button class="self-center px-8 py-2 font-semibold rounded" (click)="navigate('/login')">Login</button>
-      <button class="px-10 py-2 font-semibold rounded-full flex items-center bg-[#C3EBF5] text-[#4291B0]"
+      <button class="self-center px-8 py-2 font-semibold rounded-full hover:text-[#C3EBF5]" (click)="navigate('/login')">Login</button>
+      <button class="px-10 py-2 font-semibold rounded-full flex items-center bg-[#C3EBF5] hover:bg-white text-[#4291B0]"
               (click)="navigate('/register')">Sign up</button>
     </div>
   </div>
